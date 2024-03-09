@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>JQuery Practical Exercises 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){ 
+	//------------------------------------------------------
+	$('#showDiv').click(function()
+	{
+		$('#intro').show();
+	});
+	
+	$('#hideDiv').click(function()
+	{
+		$('#intro').hide();
+	});
+	
+	$('#toggleDiv').click(function()
+	{
+		$('#intro').toggle();
+	});
+	//------------------------------------------------------
+	$('#slideUp').click(function()
+	{
+		$('#about').slideUp();
+	});
+	
+	$('#slideDown').click(function()
+	{
+		$('#about').slideDown();
+	});
+	
+	$('#slideToggle').click(function()
+	{
+		$('#about').slideToggle();
+	});
+	//------------------------------------------------------
+	$('#addClass').click(function(){
+	
+		$( "#why" ).addClass( "red" );
+	});
+	
+	$('#removeClass').click(function(){
+	
+		$( "#why" ).removeClass( "red" );
+	});
+	//------------------------------------------------------
+	$('#fadeOut').click(function(){
+		$('img').fadeIn();
+	});
+	
+	$('#fadeIn').click(function(){
+		$('img').fadeOut();
+	});	
+	//------------------------------------------------------
+	$('#animateDown').click(function(){
+		$( "img" ).animate({
+			height: "400px"
+		});
+	});
+	
+	$('#animateUp').click(function(){
+		$( "img" ).animate({
+			top: "100px"
+		});
+	});
+	//------------------------------------------------------
+});
+</script>
+
+<style>
+/* CSS layout */
+body {
+	margin: 0;
+	padding: 0;
+}
+div { 
+	margin-bottom: 10px; 
+}
+	
+#container { 
+	min-width: 600px; 
+}
+
+#right_col {
+	width: 280px;
+	float: right;
+}
+#page_content {
+	margin-right: 290px;
+	padding-left: 10px;
+}
+#intro {
+	outline: grey solid 1px;
+	background-color:silver;
+}
+#about {
+	outline: grey solid 1px;
+	background-color:silver;
+}
+.red {
+	border: red solid 1px;	
+	background-color:#FF9999;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div id="container">
+	<div id="right_col">
+	
+	<a id="fadeOut">Fade Out</a> &nbsp; <a id="fadeIn">Fade In</a> <br/><br/>
+
+	<a id="animateUp">Animate Up</a> &nbsp; <a id="animateDown">Animate Down</a> <br/><br/>
+        <img src="images/dogs.jpg" alt="We love Dogs" id="dogimage" style="position:absolute"/>
+	
+	</div>   <!-- end right_col -->
+	
+	<div id="page_content">
+	
+	<h1>JQuery Lab Practical</h1>
+	
+	<a id="showDiv">Show Div</a> &nbsp; <a id="hideDiv">Hide Div</a> &nbsp; <a id="toggleDiv">Toggle Div</a>
+	
+    <div id="intro">
+	Welcome to  jQuery lab practical. Please use this page to complete the practical exercises.
+	</div>
+	
+	<br><br>
+	
+	<a id="slideUp">Slide Up Div</a> &nbsp; <a id="slideDown">Slide Down Div</a> &nbsp; <a id="slideToggle">Slide Toggle Div</a>
+	<div id="about">
+	jQuery is a JavaScript Library.jQuery greatly simplifies JavaScript programming. jQuery takes a lot of common tasks that requires many lines of JavaScript code to accomplish, and wraps it into methods that you can call with a single line of code.
+	</div>
+	
+	<br><br>
+
+	<button id="addClass">Add Class to Div</button>  &nbsp; &nbsp; <button id="removeClass">Remove Class from Div</button>
+	
+	<br/>
+	<div id="why">
+		<h3>Why jQuery?</h3>
+		There are a lots of other JavaScript frameworks out there, but jQuery seems to be the most popular, and also the most extendable.
+		Many of the biggest companies on the Web use jQuery, like:
+		<ul>
+   	 	<li>Google</li>
+    	<li>Microsoft</li>
+    	<li>IBM</li>
+   		</ul>
+   	</div>
+   	
+	</div>  <!-- end page content -->
+	
+</div>    <!-- end container -->
+
+</body>
+
+</html>

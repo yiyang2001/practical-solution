@@ -1,0 +1,12 @@
+body, table, input, select, textarea {
+    font-family: Calibri;
+    font-size: 1em;
+}
+
+.large {
+    font-size: 2em;
+}
+
+.error {
+    color: red;
+}

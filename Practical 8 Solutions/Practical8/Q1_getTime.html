@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <script>
+      function ajaxFunction() {
+        // Q1(b)
+        var xmlhttp; // The variable that makes Ajax possible!
+
+        // https://stackoverflow.com/questions/58006801/meaning-of-window-xmlhttprequest-ajax
+        if (window.XMLHttpRequest) {
+          // https://www.w3schools.com/js/js_ajax_http.asp
+          xmlhttp = new XMLHttpRequest();
+        } else if (ActiveXObject("Microsoft.XMLHTTP")) {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } else {
+          alert("Problem with your browser!");
+          return false;
+        }
+
+        // Q1(c)
+        // Create a function that will receive data sent from the server
+        // https://www.w3schools.com/js/js_ajax_http.asp
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4) {
+            // https://www.w3schools.com/js/js_ajax_http_response.asp
+            document.Question1.time.value = xmlhttp.responseText;
+          }
+        };
+
+        // Q1(d)
+        // https://www.w3schools.com/js/js_ajax_http_send.asp
+        xmlhttp.open("GET", "serverTime.php", true);
+        xmlhttp.send();
+      }
+    </script>
+
+    <h3>Question 1: Get Time</h3>
+
+    <!--Q1(a) -->
+    <form name="Question1">
+      <!--Q1(a)Name: <input type='text' name='username' /><br />-->
+      <!--Q1(e) -->
+      Name:
+      <input type="text" onChange="ajaxFunction();" name="username" /><br />
+      Time: <input type="text" name="time" />
+    </form>
+  </body>
+</html>
